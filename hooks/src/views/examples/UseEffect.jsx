@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import PageTitle from '../../components/layout/PageTitle'
-import { ReactDOM } from 'react-dom';
 import SectionTitle from '../../components/layout/SectionTitle';
 
 function calcFactorial (num) {
@@ -19,6 +18,7 @@ const UseEffect = (props) => {
 
     const [number, setNumber] = useState(1);
     const [factorial, setFactorial] = useState(1);
+    const [status, setStatus] = useState("Ímpar");
 
 
     useEffect(function () {
@@ -30,6 +30,11 @@ const UseEffect = (props) => {
             document.title = "É mais de 8000!"
         }
     }, [factorial])
+
+    useEffect( () => {
+        (number %2 === 0) ? setStatus("Par") : setStatus("Ímpar");
+    }, [number])
+
 
     return (
         <div className="UseEffect">
@@ -44,11 +49,13 @@ const UseEffect = (props) => {
                     <span className="text red">{factorial === -1 ? "Não existe" : factorial}</span>
                 </div>
                 <input type="number" className="input" value={number} onChange={(e) => setNumber(e.target.value)}/>
-                <span className="text">{number}</span>
             </div>
             <SectionTitle title="Exercício #02"/>
             <div className="center">
-                <span className="text">Aguarde</span>
+                <div>
+                    <span className="text">Status: </span>
+                    <span className="text red">{status}</span>
+                </div>
             </div>
         </div>
     )
