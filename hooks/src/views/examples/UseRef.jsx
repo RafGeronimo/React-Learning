@@ -4,11 +4,12 @@ import SectionTitle from '../../components/layout/SectionTitle'
 
 
 function merge (string1, string2) {
-    // let stringMerge = "";
-    // for (let i = 0 ; (string1 + string2).length ; i++) {
-    //     stringMerge = string1[i] + string2[i]
-    // }
-    return string1 + string2;
+     let stringMerge = "";
+     for (let i = 0 ; i < (string1 + string2).length ; i++) {
+    // if dentro do for, se for par adiciona string1 se ímpar adiciona string 2
+         stringMerge += (string1[i] || "") + (string2[i - 1] || "")
+     }
+    return stringMerge;
 }
 
 const UseRef = (props) => {
