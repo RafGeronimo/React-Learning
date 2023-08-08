@@ -1,7 +1,7 @@
 import React from "react";
 import PageTitle from "../../components/layout/PageTitle";
 import { useCallback } from "react";
-import UseCallBackbuttons from "./useCallbackNuttons";
+import UseCallBackbuttons from "./useCallbackButtons";
 import { useState } from "react";
 
 const UseCallback = (props) => {
