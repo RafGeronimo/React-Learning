@@ -23,6 +23,9 @@ const UseRef = (props) => {
           </button>
         </div>
       </div>
+      <div className="center">
+        <SectionTitle title="Exercício #01" />
+      </div>
     </div>
   );
 };
